@@ -11,7 +11,15 @@
     "url": "https://github.com/tc-energy-fe/tc-ui-lib.git"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "eslint": "^6.6.0",
+    "eslint-plugin-vue": "^6.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0"
   }
 }

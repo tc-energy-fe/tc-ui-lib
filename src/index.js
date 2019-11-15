@@ -1,5 +1,5 @@
 
-import EgInput from './components/input/index'
+import EgInput from './components/input/index.js'
 const components = [
   EgInput
 ]

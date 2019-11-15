@@ -1,10 +1,10 @@
 <template>
-
+  <input>
 </template>
 
 <script>
   export default {
-    name: 'Input',
+    name: 'EgInput'
   }
 </script>
 

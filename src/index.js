@@ -1,5 +1,8 @@
 
-const components = []
+import EgInput from './components/input/index'
+const components = [
+  EgInput
+]
 
 const install = function (Vue, options = {}) {
   components.forEach(component => {
@@ -8,5 +11,6 @@ const install = function (Vue, options = {}) {
 }
 
 export default {
-  install
+  install,
+  EgInput
 }

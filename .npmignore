@@ -10,6 +10,7 @@
 *.sw?
 
 build
+example
 .browserslistrc
 .editorconfig
 .eslintrc.js

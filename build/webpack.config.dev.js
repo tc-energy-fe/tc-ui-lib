@@ -6,16 +6,22 @@ const ProgressBarPlugin = require('progress-webpack-plugin')
 
 module.exports = {
   mode: "development",
-  entry: './example/main.js',
+  entry: {
+    demo: './example/main.js'
+  },
   output: {
     path: path.resolve(process.cwd(), './example/dev'),
     filename: '[name].[hash:7].js',
   },
   resolve: {
-    extensions: ['.js', '.vue', 'json']
+    extensions: ['.js', '.vue', 'json'],
+    alias: {
+      '@': path.resolve(__dirname, '../src')
+    },
   },
+  devtool: 'inline-source-map',
   devServer: {
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 8089,
     publicPath: '/',
     hot: true
@@ -34,6 +40,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           'vue-style-loader',
+          'style-loader',
           'css-loader'
         ],
       }
@@ -43,7 +50,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './example/index.html',
-      filename: 'demo.html',
     }),
     new ProgressBarPlugin(),
     new VueLoaderPlugin()

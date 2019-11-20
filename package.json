@@ -13,7 +13,7 @@
   "main": "src/index.js",
   "scripts": {
     "bootstrap": "yarn",
-    "dev": "webpack --config build/webpack.config.dev.js",
+    "dev": "webpack-dev-server --config build/webpack.config.dev.js --progress",
     "build": "webpack --config build/webpack.config.js"
   },
   "devDependencies": {
@@ -32,12 +32,14 @@
     "progress-webpack-plugin": "^0.0.24",
     "sass": "^1.23.3",
     "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.2",
     "vue-router": "^3.1.3",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0"

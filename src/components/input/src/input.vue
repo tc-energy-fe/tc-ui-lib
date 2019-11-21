@@ -1,5 +1,7 @@
 <template>
-  <input>
+  <div class="eg-input">
+    <input>
+  </div>
 </template>
 
 <script>

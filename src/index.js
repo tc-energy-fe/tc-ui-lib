@@ -1,16 +1,4 @@
+export * from './eg-ui.js'
 
-import EgInput from './components/input/index.js'
-const components = [
-  EgInput
-]
-
-const install = function (Vue, options = {}) {
-  components.forEach(component => {
-    Vue.component(component.name, component)
-  })
-}
-
-export default {
-  install,
-  EgInput
-}
+import * as EgUi from './eg-ui.js'
+export default EgUi

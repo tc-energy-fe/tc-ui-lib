@@ -4,11 +4,21 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
   mode: 'production',
   entry: {
-    app: ['./src/index.js']
+    app: ['./src/eg-ui.js']
+    // input: './src/components/input/index.js',
+    // box: './src/components/box/index.js'
   },
   output: {
     path: path.resolve(process.cwd(), './lib'),
-    filename: '[name].js',
+    filename: 'index.js',
+    libraryExport: 'default',
+    library: 'EG-UI',
+    libraryTarget: 'umd'
+  },
+  resolve: {
+    alias: {
+      common: path.resolve(__dirname, '../src/common/')
+    }
   },
   module: {
     rules: [
@@ -22,12 +32,22 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'sass-loader',
+        use: [
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              prependData: '@import "common/var.scss";'
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
+          'style-loader',
           'css-loader'
         ],
       }

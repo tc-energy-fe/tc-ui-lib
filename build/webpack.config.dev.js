@@ -11,13 +11,14 @@ module.exports = {
   },
   output: {
     path: path.resolve(process.cwd(), './example/dev'),
-    filename: '[name].[hash:7].js',
+    filename: '[name].[hash:7].js'
   },
   resolve: {
     extensions: ['.js', '.vue', 'json'],
     alias: {
-      '@': path.resolve(process.cwd(), 'src')
-    },
+      '@': path.resolve(process.cwd(), 'src'),
+      'common': path.resolve(__dirname, '../src/common/')
+    }
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -34,7 +35,17 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['sass-loader'],
+        use: [
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              prependData: '@import "common/var.scss";'
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,

@@ -1,7 +1,9 @@
 
-import input from './components/input/index.js'
+import input from './components/input/index'
+import box from './components/box/index'
 const components = [
-  input
+  input,
+  box
 ]
 
 export const install = function (Vue, options = {}) {
@@ -11,3 +13,10 @@ export const install = function (Vue, options = {}) {
 }
 
 export const EgInput = input
+export const EgBox = box
+
+export default {
+  install,
+  input,
+  box
+}

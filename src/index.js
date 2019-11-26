@@ -1,4 +1,4 @@
 export * from './eg-ui.js'
 
-import * as EgUi from './eg-ui.js'
-export default EgUi
+import * as EgUI from './eg-ui.js'
+export default EgUI

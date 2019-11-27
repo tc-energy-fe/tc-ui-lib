@@ -5,6 +5,7 @@
     <eg-input></eg-input>
     <h4>Box</h4>
     <eg-box></eg-box>
+    <i class="icon-username">&#xe66a;</i>
   </div>
 </template>
 
@@ -14,13 +15,29 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   body{
     padding: 0;
     margin: 0;
   }
+  @font-face {
+    font-family: 'iconfont';  /* project id 444910 */
+    src: url('//at.alicdn.com/t/font_444910_ucrq3qghqi.eot');
+    src: url('//at.alicdn.com/t/font_444910_ucrq3qghqi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_444910_ucrq3qghqi.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_444910_ucrq3qghqi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_444910_ucrq3qghqi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_444910_ucrq3qghqi.svg#iconfont') format('svg');
+  }
+
   #app{
     background-color: #e5e5e5;
     padding: 1rem;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  }
+
+  .icon-username {
+    font-family: iconfont !important;
+    display: inline-block;
   }
 </style>

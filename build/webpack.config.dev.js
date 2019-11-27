@@ -16,8 +16,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', 'json'],
     alias: {
-      '@': path.resolve(process.cwd(), 'src'),
-      'common': path.resolve(__dirname, '../src/common/')
+      '@': path.resolve(process.cwd(), './src'),
+      'common': path.resolve(process.cwd(), './src/common')
     }
   },
   devtool: 'inline-source-map',
@@ -37,6 +37,9 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
+            loader: 'style-loader'
+          },
+          {
             loader: 'css-loader'
           },
           {
@@ -50,7 +53,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
           'style-loader',
           'css-loader'
         ],

@@ -17,7 +17,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      common: path.resolve(__dirname, '../src/common/')
+      'common': path.resolve(process.cwd(), './src/common')
     }
   },
   module: {

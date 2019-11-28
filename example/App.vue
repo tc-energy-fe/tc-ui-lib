@@ -4,7 +4,10 @@
     <h4>Input</h4>
     <eg-input></eg-input>
     <h4>Box</h4>
-    <eg-box></eg-box>
+    <eg-box :title="'aaa'" :extra-text="'aaa'">
+      <template v-slot:headerLeft><div>bbb</div></template>
+      <template v-slot:content><div>content</div></template>
+    </eg-box>
     <i class="icon-username">&#xe66a;</i>
   </div>
 </template>
@@ -38,6 +41,6 @@
 
   .icon-username {
     font-family: iconfont !important;
-    display: inline-block;
+    display: block;
   }
 </style>

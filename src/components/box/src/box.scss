@@ -1,5 +1,18 @@
 
 .eg-box{
   background-color: $base-background-color;
-  height: 1rem;
+  .eg-box__header{
+    padding: 1rem;
+    .eg-box__header--left{
+      float: left;
+    }
+    .eg-box__header--right{
+      float: right;
+    }
+    &::after{
+      display: table;
+      clear: both;
+      content: ''
+    }
+  }
 }

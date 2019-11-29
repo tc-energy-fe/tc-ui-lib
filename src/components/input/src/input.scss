@@ -1,5 +1,31 @@
+@import "~@/common/var.scss";
 
 .eg-input {
     position: relative;
     display: inline-block;
+    font-size: $base-font-size;
+    width: 10rem;
+    &__inner {
+        width: 100%;
+        height: 1.5rem;
+        padding: 0 2rem 0 1rem;
+        box-sizing: border-box;
+        border: 1px solid #e5922c;
+        font-size: inherit;
+        -webkit-appearance: none;
+        outline: none;
+        &:hover {
+            border-color: #ff2300;
+        }
+        &:focus {
+            outline: none;
+            border-color: #ff2300;
+        }
+    }
+    &__suffix {
+        position: absolute;
+        right: 5px;
+        top: 0;
+        height: 100%;
+    }
 }

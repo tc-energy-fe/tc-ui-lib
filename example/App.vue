@@ -8,7 +8,10 @@
       </template>
     </eg-input>
     <h4>Box</h4>
-    <eg-box></eg-box>
+    <eg-box :title="'aaa'" :extra-text="'aaa'">
+      <template v-slot:headerLeft><div>bbb</div></template>
+      <template v-slot:content><div>content</div></template>
+    </eg-box>
     <i class="iconfont icon-yonghuming"></i>
   </div>
 </template>

@@ -1,4 +1,20 @@
 
-$base-font-size: 14px;
+/*基础变量*/
+$base-font-size: 16px;
+$base-background-color: #ffffff;
+$base-background-color-2: #f2f5fa;
+$base-line-color: #f2f5fa;
+$base-border-color: #a3a7af;
 
-$base-background-color: #FFF;
+$font-color-major: #5e5e5e;
+$font-color-minor: #a4a4a4;
+$font-color-placeholder: #c6c6c6;
+
+$primary-color: #3d7dff;
+$primary-color-2: rgba(61, 125, 255, 0.6);
+$primary-color-3: rgba(61, 125, 255, 0.4);
+
+$functional-color-success: #67c23a;
+$functional-color-warning: #e6a23c;
+$functional-color-danger: #f56c6c;
+$functional-color-disabled: #abacad;

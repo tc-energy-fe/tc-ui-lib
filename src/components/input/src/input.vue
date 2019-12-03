@@ -1,5 +1,8 @@
 <template>
-  <div class="eg-input">
+  <div
+    class="eg-input"
+    :class="{'eg-input-group': $slots.suffix || suffixText}"
+  >
     <input
       class="eg-input__inner"
       :value="value"
@@ -9,12 +12,13 @@
       :readonly="readonly"
       @input="handleInput"
     >
-    <span
-      v-if="$slots.suffix"
+    <div
+      v-if="$slots.suffix || suffixText"
       class="eg-input__suffix"
     >
       <slot name="suffix"></slot>
-    </span>
+      {{suffixText}}
+    </div>
   </div>
 </template>
 
@@ -30,6 +34,7 @@
       },
       disabled: Boolean,
       readonly: Boolean,
+      suffixText: String
     },
     data () {
       return {

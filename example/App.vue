@@ -2,10 +2,10 @@
   <div id="app">
     <h2>基础组件</h2>
     <h4>Input</h4>
-    <eg-input v-model="inputText">
-      <template v-slot:suffix>
-        kWh/天
-      </template>
+    <eg-input
+      v-model="inputText"
+      suffix-text="kWh/日"
+    >
     </eg-input>
     <h4>Box</h4>
     <eg-box :title="'aaa'" :extra-text="'aaa'">

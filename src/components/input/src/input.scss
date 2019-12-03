@@ -5,10 +5,12 @@
     display: inline-block;
     font-size: $base-font-size;
     $input-height: 2.5rem;
+    width: 11.25rem;
     &__inner {
-        width: 11.25rem;
+        width: 100%;
         height: $input-height;
-        padding: 0 40px 0 16px;
+        line-height: $input-height;
+        padding: 0 12px;
         background-color: $base-background-color;
         box-sizing: border-box;
         border: 1px solid $base-border-color;
@@ -17,11 +19,8 @@
         color: $font-color-major;
         -webkit-appearance: none;
         outline: none;
+        transition: all 200ms;
         &:hover {
-            border-color: $primary-color;
-        }
-        &:focus {
-            outline: none;
             border-color: $primary-color;
         }
         &::placeholder {
@@ -30,11 +29,42 @@
         }
     }
     &__suffix {
-        position: absolute;
-        right: 5px;
-        top: 0;
+        display: table-cell;
+        position: relative;
         height: 100%;
-        line-height: $input-height;
+        width: 1px;
+        padding: 0 5px;
         color: $font-color-major;
+        background-color: $base-background-color;
+        vertical-align: middle;
+        white-space: nowrap;
+        border: 1px solid $base-border-color;
+        border-radius: 4px;
+    }
+}
+
+.eg-input-group {
+    display: inline-table;
+    border-collapse: separate;
+    border-spacing: 0;
+    > .eg-input__inner {
+        display: table-cell;
+        vertical-align: middle;
+        border-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    > .eg-input__suffix {
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    &:hover {
+        > .eg-input__inner {
+            border-color: $primary-color;
+        }
+        > .eg-input__suffix {
+            border-color: $primary-color;
+        }
     }
 }

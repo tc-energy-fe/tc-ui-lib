@@ -1,7 +1,7 @@
 <template>
   <div
     class="eg-input"
-    :class="{'eg-input-group': $slots.suffix || suffixText}"
+    :class="{'eg-input-group': $slots.suffix || suffixText, 'eg-input--disabled': disabled}"
   >
     <input
       class="eg-input__inner"
@@ -10,6 +10,7 @@
       :type="type"
       :disabled="disabled"
       :readonly="readonly"
+      :placeholder="placeholder"
       @input="handleInput"
     >
     <div
@@ -34,6 +35,7 @@
       },
       disabled: Boolean,
       readonly: Boolean,
+      placeholder: String,
       suffixText: String
     },
     data () {

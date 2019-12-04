@@ -5,6 +5,8 @@
     <eg-input
       v-model="inputText"
       suffix-text="kWh/日"
+      placeholder="输入XXX"
+      disabled
     >
     </eg-input>
     <h4>Box</h4>
@@ -12,7 +14,7 @@
       <template v-slot:headerLeft><div>bbb</div></template>
       <template v-slot:content><div>content</div></template>
     </eg-box>
-    <i class="iconfont icon-yonghuming"></i>
+    <i class="iconfont icon-tab_icon_fold"></i>
   </div>
 </template>
 
@@ -33,7 +35,7 @@
     margin: 0;
   }
 
-  @import "http://at.alicdn.com/t/font_444910_ucrq3qghqi.css";
+  @import "//at.alicdn.com/t/font_444910_0qfvwcv4jyj.css";
   /*@font-face {*/
   /*  font-family: 'iconfont';  !* project id 444910 *!*/
   /*  src: url('//at.alicdn.com/t/font_444910_ucrq3qghqi.eot');*/

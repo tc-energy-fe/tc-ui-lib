@@ -1,22 +1,23 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: 'production',
   entry: {
     app: ['./src/eg-ui.js']
-    // input: './src/components/input/index.js',
-    // box: './src/components/box/index.js'
   },
   output: {
     path: path.resolve(process.cwd(), './lib'),
     filename: 'index.js',
+    chunkFilename: '[id].js',
     libraryExport: 'default',
     library: 'EG-UI',
     libraryTarget: 'umd'
   },
   resolve: {
     alias: {
+      '@': path.resolve(process.cwd(), './src'),
       'common': path.resolve(process.cwd(), './src/common')
     }
   },
@@ -33,9 +34,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: 'css-loader'
-          },
+          MiniCssExtractPlugin.loader,
+          'css-loader',
           {
             loader: 'sass-loader',
             options: {
@@ -47,13 +47,16 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader'
         ],
       }
     ],
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style.css'
+    })
   ],
 }

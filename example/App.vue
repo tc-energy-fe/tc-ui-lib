@@ -6,7 +6,6 @@
       v-model="inputText"
       suffix-text="kWh/日"
       placeholder="输入XXX"
-      disabled
     >
     </eg-input>
     <h4>Box</h4>

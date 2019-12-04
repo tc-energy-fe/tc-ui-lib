@@ -50,4 +50,4 @@
   }
 </script>
 
-<style src="./input.scss"></style>
+<style src="./input.scss" lang="scss"></style>

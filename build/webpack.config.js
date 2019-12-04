@@ -13,7 +13,7 @@ module.exports = {
     chunkFilename: '[id].js',
     libraryExport: 'default',
     library: 'EG-UI',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs2'
   },
   resolve: {
     alias: {

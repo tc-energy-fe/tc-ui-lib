@@ -5608,6 +5608,13 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.3"
 
+tc-ui-lib@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/tc-ui-lib/-/tc-ui-lib-0.2.0.tgz#fba2475d1606ca2434f6c9d75967d789ce587c81"
+  integrity sha512-x7BgkfHenGy3T2FFrE+NP7I3jhOlIzes0N/mEp/CP7Dr94GR8SezYFt1LisiSMk0Aq0sL+lJBg5P6IzDMQQkMA==
+  dependencies:
+    "@babel/polyfill" "^7.7.0"
+
 terser-webpack-plugin@^1.4.1:
   version "1.4.1"
   resolved "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.1.tgz#61b18e40eaee5be97e771cdbb10ed1280888c2b4"

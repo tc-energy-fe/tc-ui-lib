@@ -44,4 +44,4 @@
   }
 </script>
 
-<style src="./box.scss"></style>
+<style src="./box.scss" lang="scss"></style>

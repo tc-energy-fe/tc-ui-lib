@@ -1,21 +1,36 @@
 
-/*基础变量*/
+/*基础公共变量*/
 $base-font-size: 16px;
 $base-background-color: #ffffff;
 $base-background-color-2: #f2f5fa;
 $base-background-color-disabled: #f5f7fa;
 $base-line-color: #f2f5fa;
 $base-border-color: #a3a7af;
+$base-border-radius: 4px;
 
 $font-color-major: #5e5e5e;
 $font-color-minor: #a4a4a4;
 $font-color-placeholder: #c6c6c6;
+$font-color-reverse: #ffffff;
 
+/*Color*/
 $primary-color: #3d7dff;
 $primary-color-2: rgba(61, 125, 255, 0.6);
 $primary-color-3: rgba(61, 125, 255, 0.4);
+$primary-color-light-1: mix(white, $primary-color, 10%);
 
 $functional-color-success: #67c23a;
 $functional-color-warning: #e6a23c;
 $functional-color-danger: #f56c6c;
 $functional-color-disabled: #abacad;
+
+/*Transition*/
+$all-transition: all 200ms;
+
+/*按钮button变量*/
+$button-disabled-background-color: #abacad;
+
+$button-minor-background-color: #e5eeff;
+$button-minor-hover-background-color: mix(white, $button-minor-background-color, 25%);
+
+$button-text-disabled-color: $font-color-minor;

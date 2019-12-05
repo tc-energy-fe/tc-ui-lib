@@ -4,16 +4,32 @@
     <h4>Input</h4>
     <eg-input
       v-model="inputText"
-      suffix-text="kWh/日"
       placeholder="输入XXX"
     >
+      <template v-slot:suffix>
+        <i class="iconfont icon-tab_icon_fold" />
+      </template>
     </eg-input>
     <h4>Box</h4>
-    <eg-box :title="'aaa'" :extra-text="'aaa'">
-      <template v-slot:headerLeft><div>bbb</div></template>
-      <template v-slot:content><div>content</div></template>
+    <eg-box
+      :title="'aaa'"
+      :extra-text="'aaa'"
+    >
+      <template v-slot:headerLeft>
+        <div>bbb</div>
+      </template>
+      <template v-slot:content>
+        <div>content</div>
+      </template>
     </eg-box>
-    <i class="iconfont icon-tab_icon_fold"></i>
+    <h4>Button</h4>
+    <eg-button
+      type="text1"
+      disabled
+    >
+      主要按钮
+    </eg-button>
+    <i class="iconfont icon-tab_icon_fold" />
   </div>
 </template>
 

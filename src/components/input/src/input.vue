@@ -36,7 +36,19 @@
       disabled: Boolean,
       readonly: Boolean,
       placeholder: String,
-      suffixText: String
+      suffixText: String,
+      isInteger: {
+        type: Boolean,
+        default: false
+      },
+      isNumber: {
+        type: Boolean,
+        default: false
+      },
+      isNegative: {
+        type: Boolean,
+        default: false
+      }
     },
     data () {
       return {
@@ -44,7 +56,56 @@
     },
     methods: {
       handleInput (event) {
+        if (this.isNumber || this.isInteger) {
+          this.inputValidate(event)
+        }
         this.$emit('input', event.target.value)
+      },
+      handleBlur (event) {
+        if (this.isNumber || this.isInteger) {
+          this.blurValidate(event)
+          this.$emit('input', event.target.value)
+        }
+        this.$emit('blur', event)
+      },
+      inputValidate (event) {
+        let value = event.target.value
+        if (value !== undefined && value !== null) {
+          value = value.toString().trim()
+        } else {
+          return
+        }
+        if (value !== '') {
+          if (this.isNumber && !this.isInteger) {
+            const numberRegExp = this.isNegative ? /^-?(\d+(\.\d*)?)?/ : /^\d+(\.\d*)?/
+            value = value.match(numberRegExp)
+          } else if (this.isInteger) {
+            const integerRegExp = this.isNegative ? /^-?\d+/ : /^\d+/
+            value = value.match(integerRegExp)
+          }
+          value = value ? value[0] : ''
+        }
+        event.target.value = value
+      },
+      blurValidate (event) {
+        let value = event.target.value
+        if (value !== undefined && value !== null) {
+          value = value.toString().trim()
+        } else {
+          return
+        }
+        if (value !== '') {
+          if (this.isNumber && !this.isInteger) {
+            const numberRegExp = this.isNegative ? /^-?\d+(\.\d+)?/ : /^\d+(\.\d+)?/
+            value = value.match(numberRegExp)
+            value = value ? parseFloat(value[0]) : ''
+          } else if (this.isInteger) {
+            const integerRegExp = this.isNegative ? /^-?\d+/ : /^\d+/
+            value = value.match(integerRegExp)
+            value = value ? parseInt(value[0]) : ''
+          }
+        }
+        event.target.value = value
       }
     }
   }

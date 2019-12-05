@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import EgUi from 'tc-ui-lib'
-import 'tc-ui-lib/lib/style.css'
+import EgUi from '../src/index'
 
 Vue.use(EgUi)
 

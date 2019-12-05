@@ -1,9 +1,11 @@
 
 import input from './components/input/index'
 import box from './components/box/index'
+import button from './components/button/index'
 const components = [
   input,
-  box
+  box,
+  button
 ]
 
 export const install = function (Vue, options = {}) {
@@ -14,9 +16,11 @@ export const install = function (Vue, options = {}) {
 
 export const EgInput = input
 export const EgBox = box
+export const EgButton = button
 
 export default {
   install,
   input,
-  box
+  box,
+  button
 }

@@ -24,7 +24,9 @@
         <span v-if="!$slots.headerRight">{{extraText}}</span>
       </div>
     </div>
-    <slot name="content"></slot>
+    <div class="eg-box__content">
+      <slot name="content"></slot>
+    </div>
   </div>
 </template>
 

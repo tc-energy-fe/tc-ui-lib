@@ -5,6 +5,7 @@
     <eg-input
       v-model="inputText"
       placeholder="输入XXX"
+      width-type="medium"
     >
       <template v-slot:suffix>
         <i class="iconfont icon-tab_icon_fold" />
@@ -24,12 +25,16 @@
     </eg-box>
     <h4>Button</h4>
     <eg-button
-      type="text1"
-      disabled
+      type="text"
+      color="danger"
     >
       主要按钮
     </eg-button>
     <i class="iconfont icon-tab_icon_fold" />
+    <i class="iconfont icon-notice_icon_close" />
+    <i class="iconfont icon-nav_icon_setting_n" />
+    <i class="iconfont icon-nav_icon_report_n" />
+    <i class="iconfont icon-nav_icon_overview_n" />
   </div>
 </template>
 
@@ -50,7 +55,7 @@
     margin: 0;
   }
 
-  @import "//at.alicdn.com/t/font_444910_0qfvwcv4jyj.css";
+  @import "//at.alicdn.com/t/font_444910_7bsaew8i1bf.css";
   /*@font-face {*/
   /*  font-family: 'iconfont';  !* project id 444910 *!*/
   /*  src: url('//at.alicdn.com/t/font_444910_ucrq3qghqi.eot');*/

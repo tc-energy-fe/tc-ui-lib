@@ -1,7 +1,8 @@
+
 <template>
   <div
     class="eg-input"
-    :class="{'eg-input-group': $slots.suffix || suffixText, 'eg-input--disabled': disabled}"
+    :class="[{'eg-input-group': $slots.suffix || suffixText, 'eg-input--disabled': disabled}, widthType ? 'eg-input--' + widthType : '']"
   >
     <input
       class="eg-input__inner"
@@ -12,6 +13,7 @@
       :readonly="readonly"
       :placeholder="placeholder"
       @input="handleInput"
+      @blur="handleBlur"
     >
     <div
       v-if="$slots.suffix || suffixText"
@@ -48,6 +50,11 @@
       isNegative: {
         type: Boolean,
         default: false
+      },
+      widthType: {
+        // Input宽度选项:medium,long
+        type: String,
+        default: ''
       }
     },
     data () {

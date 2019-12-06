@@ -42,9 +42,10 @@
   }
 }
 
-.eg-button--text1 {
+.eg-button--text {
   color: $primary-color;
   background-color: transparent;
+  padding: 0;
   &:hover {
     background-color: transparent;
     text-decoration: underline;
@@ -58,22 +59,10 @@
     color: $button-text-disabled-color;
     text-decoration: none;
   }
-}
-
-.eg-button--text2 {
-  color: $functional-color-danger;
-  background-color: transparent;
-  &:hover {
-    background-color: transparent;
-    text-decoration: underline;
+  &[color=success] {
+    color: $functional-color-success;
   }
-  &:active {
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  &:disabled {
-    background-color: transparent;
-    color: $button-text-disabled-color;
-    text-decoration: none;
+  &[color=danger] {
+    color: $functional-color-danger;
   }
 }

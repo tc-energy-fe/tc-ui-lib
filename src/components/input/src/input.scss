@@ -6,6 +6,12 @@
     $input-height: 2.5rem;
     width: 11.25rem;
     background-color: $base-background-color;
+    &--medium {
+        width: 13.75rem;
+    }
+    &--long {
+        width: 25rem;
+    }
     &__inner {
         width: 100%;
         height: $input-height;

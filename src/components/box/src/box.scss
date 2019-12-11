@@ -1,8 +1,10 @@
 
 .eg-box{
+  display: flex;
   background-color: $base-background-color;
   .eg-box__header{
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
+    flex-shrink: 0;
     .eg-box__header--left{
       float: left;
     }
@@ -16,6 +18,9 @@
     }
   }
   .eg-box__content {
+    height: 0;
+    flex: 1;
     padding: 1rem;
+    overflow: auto;
   }
 }

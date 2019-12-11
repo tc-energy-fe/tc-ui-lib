@@ -28,7 +28,13 @@
       type="text"
       color="danger"
     >
-      主要按钮
+      文字按钮
+    </eg-button>
+    <eg-button
+      type="text"
+      color="success"
+    >
+      文字按钮
     </eg-button>
     <i class="iconfont icon-tab_icon_fold" />
     <i class="iconfont icon-notice_icon_close" />

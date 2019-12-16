@@ -65,13 +65,14 @@
       handleInput (event) {
         if (this.isNumber || this.isInteger) {
           this.inputValidate(event)
+          this.$emit('input', Number(event.target.value) || '')
+        } else {
+          this.$emit('input', event.target.value)
         }
-        this.$emit('input', event.target.value)
       },
       handleBlur (event) {
         if (this.isNumber || this.isInteger) {
-          this.blurValidate(event)
-          this.$emit('input', event.target.value)
+          this.$emit('input', this.blurValidate(event))
         }
         this.$emit('blur', event)
       },
@@ -105,14 +106,14 @@
           if (this.isNumber && !this.isInteger) {
             const numberRegExp = this.isNegative ? /^-?\d+(\.\d+)?/ : /^\d+(\.\d+)?/
             value = value.match(numberRegExp)
-            value = value ? parseFloat(value[0]) : ''
           } else if (this.isInteger) {
             const integerRegExp = this.isNegative ? /^-?\d+/ : /^\d+/
             value = value.match(integerRegExp)
-            value = value ? parseInt(value[0]) : ''
           }
+          value = value ? Number(value[0]) : ''
         }
         event.target.value = value
+        return value
       }
     }
   }

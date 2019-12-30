@@ -42,6 +42,12 @@
     <i class="iconfont icon-nav_icon_setting_n" />
     <i class="iconfont icon-nav_icon_report_n" />
     <i class="iconfont icon-nav_icon_overview_n" />
+    <h4>Checkbox Button</h4>
+    <eg-checkbox-group v-model="checked">
+      <eg-checkbox-button text="checkbox1" :label="1" size="long"></eg-checkbox-button>
+      <eg-checkbox-button text="checkbox2" :label="2"></eg-checkbox-button>
+    </eg-checkbox-group>
+    <p></p>
   </div>
 </template>
 
@@ -50,8 +56,12 @@
     name: 'App',
     data () {
       return {
-        inputText: ''
+        inputText: '',
+        checkboxValue: false,
+        checked: [1, 2]
       }
+    },
+    methods: {
     }
   }
 </script>

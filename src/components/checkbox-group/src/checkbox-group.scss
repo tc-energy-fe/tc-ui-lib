@@ -1,0 +1,8 @@
+
+.eg-checkbox-group{
+  font-size: 0;
+
+  .eg-checkbox-button:not(:last-of-type){
+    margin-right: 1rem;
+  }
+}

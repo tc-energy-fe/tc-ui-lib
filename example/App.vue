@@ -56,7 +56,7 @@
     name: 'App',
     data () {
       return {
-        inputText: '',
+        inputText: null,
         checkboxValue: false,
         checked: [1, 2]
       }

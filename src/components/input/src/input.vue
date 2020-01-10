@@ -65,7 +65,7 @@
       handleInput (event) {
         if (this.isNumber || this.isInteger) {
           this.inputValidate(event)
-          this.$emit('input', Number(event.target.value) || '')
+          this.$emit('input', event.target.value !== '' ? Number(event.target.value) : '')
         } else {
           this.$emit('input', event.target.value)
         }

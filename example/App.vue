@@ -46,8 +46,14 @@
     <eg-checkbox-group v-model="checked">
       <eg-checkbox-button text="checkbox1" :label="1" size="long"></eg-checkbox-button>
       <eg-checkbox-button text="checkbox2" :label="2"></eg-checkbox-button>
+      <eg-checkbox-button text="box3" :label="3" size="short"></eg-checkbox-button>
     </eg-checkbox-group>
-    <p></p>
+    <h4>Tab</h4>
+    <eg-tab-group v-model="tabValue">
+      <eg-tab-button text="tab1" :label="1" size="long"></eg-tab-button>
+      <eg-tab-button text="tab2" :label="2"></eg-tab-button>
+      <eg-tab-button text="tab3" :label="3" size="short"></eg-tab-button>
+    </eg-tab-group>
   </div>
 </template>
 
@@ -56,9 +62,10 @@
     name: 'App',
     data () {
       return {
-        inputText: '',
+        inputText: null,
         checkboxValue: false,
-        checked: [1, 2]
+        checked: [1, 2],
+        tabValue: 1
       }
     },
     methods: {

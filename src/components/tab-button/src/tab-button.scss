@@ -1,0 +1,32 @@
+.eg-tab-button{
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 2.5rem;
+  color: $primary-color;
+  background-color: white;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1rem;
+
+  &:hover{
+    background-color: $base-background-color-2;
+  }
+
+  &.is-checked{
+    border: none;
+    background-color: $primary-color;
+    color: $font-color-reverse;
+  }
+
+  &--long {
+    width: 12.5rem;
+  }
+
+  &--short {
+    width: 7.5rem;
+  }
+}

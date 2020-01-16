@@ -28,8 +28,8 @@ export const EgBox = box
 export const EgButton = button
 export const EgCheckboxButton = checkboxButton
 export const EgCheckboxGroup = checkboxGroup
-export const EgtabGroup = tabGroup
-export const EgtabButton = tabButton
+export const EgTabGroup = tabGroup
+export const EgTabButton = tabButton
 
 export default {
   install,

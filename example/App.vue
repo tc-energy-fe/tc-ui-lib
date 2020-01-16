@@ -51,7 +51,7 @@
     <h4>Tab</h4>
     <eg-tab-group v-model="tabValue">
       <eg-tab-button text="tab1" :label="1" size="long"></eg-tab-button>
-      <eg-tab-button text="tab2" :label="2"></eg-tab-button>
+      <eg-tab-button text="tab2" :label="2" :disabled="true"></eg-tab-button>
       <eg-tab-button text="tab3" :label="3" size="short"></eg-tab-button>
     </eg-tab-group>
   </div>

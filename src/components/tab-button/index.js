@@ -1,7 +1,7 @@
-import EgtabButton from './src/tab-button.vue'
+import EgTabButton from './src/tab-button.vue'
 
-EgtabButton.install = function (Vue) {
-  Vue.component(EgtabButton.name, EgtabButton)
+EgTabButton.install = function (Vue) {
+  Vue.component(EgTabButton.name, EgTabButton)
 }
 
-export default EgtabButton
+export default EgTabButton

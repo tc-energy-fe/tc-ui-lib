@@ -21,6 +21,9 @@
     background-color: $primary-color;
     color: $font-color-reverse;
   }
+  &.is-disabled {
+    cursor: not-allowed;
+  }
 
   &--long {
     width: 12.5rem;

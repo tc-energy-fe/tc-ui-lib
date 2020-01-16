@@ -43,7 +43,11 @@
         type: String,
         default: ''
       },
-      width: Number
+      width: Number,
+      disabled: {
+        type: Boolean,
+        default: false
+      }
     },
 
     model: {
@@ -80,7 +84,7 @@
 
       isDisabled () {
         return this.isGroup ?
-          this.$parent.disabled :
+          this.$parent.disabled || this.disabled :
           this.disabled
       },
 

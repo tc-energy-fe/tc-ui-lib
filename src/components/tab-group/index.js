@@ -1,7 +1,7 @@
-import EgtabGroup from './src/tab-group.vue'
+import EgTabGroup from './src/tab-group.vue'
 
-EgtabGroup.install = function (Vue) {
-  Vue.component(EgtabGroup.name, EgtabGroup)
+EgTabGroup.install = function (Vue) {
+  Vue.component(EgTabGroup.name, EgTabGroup)
 }
 
-export default EgtabGroup
+export default EgTabGroup

@@ -58,7 +58,9 @@
     </div>
     <h4>NoData Mask</h4>
     <eg-button @click="toggleNodata">切换Nodata</eg-button>
-    <div style="background: white;margin-top: 1rem;" v-nodata="isShowNoData">aaa</div>
+    <div style="background: white;margin-top: 1rem;">
+      <p v-nodata="isShowNoData" eg-nodata-text="木有数据">aaa</p>
+    </div>
   </div>
 </template>
 

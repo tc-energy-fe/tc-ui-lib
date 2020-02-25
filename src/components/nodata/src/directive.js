@@ -21,22 +21,30 @@ const NodataDirective = {
       name: 'nodata',
 
       bind (el, binding, vNode) {
+        let text = el.getAttribute('eg-nodata-text')
         let mask = new Mask({
           el: document.createElement('div'),
           data: {}
         })
 
+        text && mask.setText(text)
+
         el.instance = mask
         el.mask = mask.$el
         addClass(el, 'eg-nodata__parent')
-        binding.value && el.appendChild(mask.$el)
+        el.appendChild(mask.$el)
+        mask.visible = binding.value
       },
 
-      inserted (el, binding) {},
+      inserted (el, binding) {
+      },
 
       update (el, binding, vnode, oldVnode) {
+        let text = el.getAttribute('eg-nodata-text')
+        text && el.instance.setText(text)
+
         if (binding.oldValue !== binding.value) {
-          el.mask.style.display = binding.value ? 'flex' : 'none'
+          el.instance.visible = binding.value
 
           if (binding.value) {
             addClass(el, 'eg-nodata__parent')
@@ -51,7 +59,7 @@ const NodataDirective = {
         el.mask.parentNode &&
         el.mask.parentNode.removeChild(el.mask)
 
-        el.instance && el.instance.destroy()
+        el.instance && el.instance.$destroy()
       }
     })
   }

@@ -5561,9 +5561,9 @@ tar@^4:
     yallist "^3.0.3"
 
 tc-ui-lib@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/tc-ui-lib/-/tc-ui-lib-0.2.1.tgz#a54e9ff2e1d5526b9a46354c5de664c8eb43436b"
-  integrity sha512-AlOfsnEdTC7hgxfekYYwffzEb2elGPfTvduxRfuNy9gnWaX+Pf0RsnOtVM5UOAavl5fAF6X0qJYL1oTjfJmF9w==
+  version "0.2.9"
+  resolved "https://registry.npm.taobao.org/tc-ui-lib/download/tc-ui-lib-0.2.9.tgz#c94c9185b7db3702fee66a87e9c5b40c7464bc17"
+  integrity sha1-yUyRhbfbNwL+5mqH6cW0DHRkvBc=
   dependencies:
     "@babel/polyfill" "^7.7.0"
 

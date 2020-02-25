@@ -51,7 +51,7 @@ const NodataDirective = {
         el.mask.parentNode &&
         el.mask.parentNode.removeChild(el.mask)
 
-        el.instance && el.instance.destroy()
+        el.instance && el.instance.$destroy()
       }
     })
   }

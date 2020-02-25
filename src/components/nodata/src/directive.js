@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Nodata from './nodata'
+import Nodata from './nodata.vue'
 
 const Mask = Vue.extend(Nodata)
 

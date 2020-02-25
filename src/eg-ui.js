@@ -6,6 +6,7 @@ import checkboxButton from './components/checkbox-button/index'
 import checkboxGroup from './components/checkbox-group/index'
 import tabGroup from './components/tab-group/index'
 import tabButton from './components/tab-button/index'
+import nodata from './components/nodata/index'
 
 const components = [
   input,
@@ -21,6 +22,8 @@ export const install = function (Vue, options = {}) {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
+
+  Vue.use(nodata)
 }
 
 export const EgInput = input
@@ -30,6 +33,7 @@ export const EgCheckboxButton = checkboxButton
 export const EgCheckboxGroup = checkboxGroup
 export const EgTabGroup = tabGroup
 export const EgTabButton = tabButton
+export const EgNodata = nodata
 
 export default {
   install,
@@ -39,5 +43,6 @@ export default {
   checkboxButton,
   checkboxGroup,
   tabGroup,
-  tabButton
+  tabButton,
+  nodata
 }

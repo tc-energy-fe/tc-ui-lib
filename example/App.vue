@@ -14,17 +14,17 @@
     </eg-input>
     <h4>Box</h4>
     <eg-box
-      :title="'aaa'"
-      :extra-text="'aaa'"
+      :extra-text="'title2'"
     >
       <template v-slot:headerLeft>
-        <div>bbb</div>
+        <div>title1</div>
       </template>
       <template v-slot:content>
         <div>content</div>
       </template>
     </eg-box>
     <h4>Button</h4>
+    <eg-button>button</eg-button>
     <eg-button
       type="text"
       color="danger"
@@ -49,11 +49,16 @@
       <eg-checkbox-button text="box3" :label="3" size="short"></eg-checkbox-button>
     </eg-checkbox-group>
     <h4>Tab</h4>
-    <eg-tab-group v-model="tabValue">
-      <eg-tab-button text="tab1" :label="1" size="long"></eg-tab-button>
-      <eg-tab-button text="tab2" :label="2" :disabled="true"></eg-tab-button>
-      <eg-tab-button text="tab3" :label="3" size="short"></eg-tab-button>
-    </eg-tab-group>
+    <div style="background: white;padding: 1rem;text-align: center;">
+      <eg-tab-group v-model="tabValue">
+        <eg-tab-button text="tab1" :label="1" size="long"></eg-tab-button>
+        <eg-tab-button text="tab2" :label="2" :disabled="true"></eg-tab-button>
+        <eg-tab-button text="tab3" :label="3" size="short"></eg-tab-button>
+      </eg-tab-group>
+    </div>
+    <h4>NoData Mask</h4>
+    <eg-button @click="toggleNodata">切换Nodata</eg-button>
+    <div style="background: white;margin-top: 1rem;" v-nodata="isShowNoData">aaa</div>
   </div>
 </template>
 
@@ -65,10 +70,14 @@
         inputText: null,
         checkboxValue: false,
         checked: [1, 2],
-        tabValue: 1
+        tabValue: 1,
+        isShowNoData: true
       }
     },
     methods: {
+      toggleNodata () {
+        this.isShowNoData = !this.isShowNoData
+      }
     }
   }
 </script>
@@ -91,7 +100,7 @@
   /*}*/
 
   #app{
-    background-color: #e5e5e5;
+    background-color: #f2f5fa;
     padding: 1rem;
     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   }

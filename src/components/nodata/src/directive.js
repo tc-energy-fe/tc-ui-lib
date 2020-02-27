@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Nodata from './nodata.vue'
 
-const Mask = Vue.extend(Nodata)
+const NodataMask = Vue.extend(Nodata)
 
 const addClass = function (el, className) {
   if (typeof className === 'string') {
@@ -22,7 +22,7 @@ const NodataDirective = {
 
       bind (el, binding, vNode) {
         let text = el.getAttribute('eg-nodata-text')
-        let mask = new Mask({
+        let mask = new NodataMask({
           el: document.createElement('div'),
           data: {}
         })

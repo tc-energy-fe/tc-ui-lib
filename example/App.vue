@@ -14,13 +14,14 @@
     </eg-input>
     <h4>Box</h4>
     <eg-box
+      style="height: 5rem;"
       :extra-text="'title2'"
     >
       <template v-slot:headerLeft>
         <div>title1</div>
       </template>
       <template v-slot:content>
-        <div>content</div>
+        <div style="height: 20rem;">content</div>
       </template>
     </eg-box>
     <h4>Button</h4>

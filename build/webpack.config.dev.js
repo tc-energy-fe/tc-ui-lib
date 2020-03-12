@@ -7,7 +7,7 @@ const ProgressBarPlugin = require('progress-webpack-plugin')
 module.exports = {
   mode: "development",
   entry: {
-    demo: './example/main.js'
+    demo: ['@babel/polyfill', './example/main.js']
   },
   output: {
     path: path.resolve(process.cwd(), './example/dev'),
@@ -23,7 +23,7 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     host: 'localhost',
-    port: 8089,
+    port: 18089,
     publicPath: '/',
     hot: true
   },
@@ -56,6 +56,16 @@ module.exports = {
           'style-loader',
           'css-loader'
         ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
       }
     ],
   },

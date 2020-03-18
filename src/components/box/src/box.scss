@@ -6,7 +6,7 @@
   flex-direction: column;
   background-color: $base-background-color;
   .eg-box__header{
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem;
     flex-shrink: 0;
     .eg-box__header--left{
       float: left;
@@ -23,7 +23,7 @@
   .eg-box__content {
     flex-grow: 1;
     flex-shrink: 1;
-    padding: 1rem;
+    padding: 0 1rem 1rem;
     overflow: auto;
   }
 }

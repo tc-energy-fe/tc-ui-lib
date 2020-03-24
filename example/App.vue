@@ -14,7 +14,7 @@
     </eg-input>
     <h4>Box</h4>
     <eg-box
-      style="height: 5rem;"
+      style="height: 10rem;"
       :extra-text="'title2'"
     >
       <template v-slot:headerLeft>

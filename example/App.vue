@@ -57,6 +57,13 @@
         <eg-tab-button text="tab3" :label="3" size="short"></eg-tab-button>
       </eg-tab-group>
     </div>
+    <div style="background: white;padding: 1rem;text-align: center;">
+      <eg-tab-group type="underline" v-model="tabValue">
+        <eg-tab-button text="日" :label="1" size="long"></eg-tab-button>
+        <eg-tab-button text="月" :label="2" :disabled="true"></eg-tab-button>
+        <eg-tab-button text="年" :label="3" size="short"></eg-tab-button>
+      </eg-tab-group>
+    </div>
     <h4>NoData Mask</h4>
     <eg-button @click="toggleNodata">切换Nodata</eg-button>
     <div style="background: white;margin-top: 1rem;">

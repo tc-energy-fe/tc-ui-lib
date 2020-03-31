@@ -12,7 +12,9 @@
 
 <template>
   <div
-    class="eg-tab-group">
+    class="eg-tab-group"
+    :type="type"
+  >
     <slot></slot>
   </div>
 </template>
@@ -30,7 +32,14 @@
         type: Boolean,
         default: false
       },
-      size: String
+      size: String,
+      type: String
+    },
+
+    provide () {
+      return {
+        type: this.type || ''
+      }
     },
 
     model: {

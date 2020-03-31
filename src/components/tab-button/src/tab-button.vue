@@ -22,6 +22,7 @@
     ]"
     :style="width ? `width: ${width}rem` : ''"
     @click="handleClick"
+    :type="type"
   >
     <template v-if="text">{{text}}</template>
     <slot v-else></slot>
@@ -49,6 +50,8 @@
         default: false
       }
     },
+
+    inject: ['type'],
 
     model: {
       prop: 'value',

@@ -114,4 +114,4 @@
   }
 </script>
 
-<style lang="scss" src="./checkbox-button.scss" scoped></style>
+<style lang="scss" src="./checkbox-button.scss"></style>

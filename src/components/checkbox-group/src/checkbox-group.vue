@@ -49,4 +49,4 @@
   }
 </script>
 
-<style lang="scss" src="./checkbox-group.scss" scoped></style>
+<style lang="scss" src="./checkbox-group.scss"></style>

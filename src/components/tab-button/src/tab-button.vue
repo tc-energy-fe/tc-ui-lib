@@ -109,4 +109,4 @@
   }
 </script>
 
-<style lang="scss" src="./tab-button.scss" scoped></style>
+<style lang="scss" src="./tab-button.scss"></style>

@@ -2,7 +2,9 @@
 .eg-tab-group{
   font-size: 0;
 
-  .eg-tab-button:not(:last-of-type){
-    margin-right: 1rem;
+  &:not([type=underline]) {
+    .eg-tab-button:not(:last-of-type) {
+      margin-right: 1rem;
+    }
   }
 }

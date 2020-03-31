@@ -32,4 +32,18 @@
   &--short {
     width: 7.5rem;
   }
+
+  &[type=underline] {
+    width: initial;
+    padding: 0 1rem;
+    background-color: initial;
+    border-radius: 0;
+    border-bottom: 1px solid #d7d7d7;
+
+    &.is-checked{
+      border-color: $primary-color;
+      background-color: initial;
+      color: $primary-color;
+    }
+  }
 }

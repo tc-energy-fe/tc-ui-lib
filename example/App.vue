@@ -14,7 +14,7 @@
     </eg-input>
     <h4>Box</h4>
     <eg-box
-      style="height: 5rem;"
+      style="height: 10rem;"
       :extra-text="'title2'"
     >
       <template v-slot:headerLeft>
@@ -55,6 +55,13 @@
         <eg-tab-button text="tab1" :label="1" size="long"></eg-tab-button>
         <eg-tab-button text="tab2" :label="2" :disabled="true"></eg-tab-button>
         <eg-tab-button text="tab3" :label="3" size="short"></eg-tab-button>
+      </eg-tab-group>
+    </div>
+    <div style="background: white;padding: 1rem;text-align: center;">
+      <eg-tab-group type="underline" v-model="tabValue">
+        <eg-tab-button text="日" :label="1" size="long"></eg-tab-button>
+        <eg-tab-button text="月" :label="2" :disabled="true"></eg-tab-button>
+        <eg-tab-button text="年" :label="3" size="short"></eg-tab-button>
       </eg-tab-group>
     </div>
     <h4>NoData Mask</h4>

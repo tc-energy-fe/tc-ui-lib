@@ -14,6 +14,7 @@
       :placeholder="placeholder"
       @input="handleInput"
       @blur="handleBlur"
+      @focus="handleFocus"
     >
     <div
       v-if="$slots.suffix || suffixText"
@@ -75,6 +76,9 @@
           this.$emit('input', this.blurValidate(event))
         }
         this.$emit('blur', event)
+      },
+      handleFocus (event) {
+        this.$emit('focus', event)
       },
       inputValidate (event) {
         let value = event.target.value

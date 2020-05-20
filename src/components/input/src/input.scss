@@ -98,3 +98,12 @@
         cursor: not-allowed;
     }
 }
+
+.eg-input--error {
+    > .eg-input__inner {
+        border-color: #f56c6c;
+    }
+    > .eg-input__suffix {
+        border-color: #f56c6c;
+    }
+}

@@ -2,7 +2,7 @@
 <template>
   <div
     class="eg-input"
-    :class="[{'eg-input-group': $slots.suffix || suffixText, 'eg-input--disabled': disabled}, widthType ? 'eg-input--' + widthType : '']"
+    :class="[{'eg-input-group': $slots.suffix || suffixText, 'eg-input--disabled': disabled, 'eg-input--error': isError}, widthType ? 'eg-input--' + widthType : '']"
   >
     <input
       class="eg-input__inner"
@@ -56,6 +56,10 @@
         // Input宽度选项:medium,long
         type: String,
         default: ''
+      },
+      isError: {
+        type: Boolean,
+        default: false
       }
     },
     data () {

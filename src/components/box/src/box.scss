@@ -21,8 +21,7 @@
     }
   }
   .eg-box__content {
-    flex-grow: 1;
-    flex-shrink: 1;
+    flex: auto;
     padding: 0 1rem 1rem;
     overflow: auto;
   }

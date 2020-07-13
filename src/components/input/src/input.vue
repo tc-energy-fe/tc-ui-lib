@@ -2,9 +2,17 @@
 <template>
   <div
     class="eg-input"
-    :class="[{'eg-input-group': $slots.suffix || suffixText, 'eg-input--disabled': disabled, 'eg-input--error': isError}, widthType ? 'eg-input--' + widthType : '']"
+    :class="[
+      {
+        'eg-input-group': $slots.suffix || suffixText,
+        'eg-input--disabled': disabled,
+        'eg-input--error': isShowError
+      },
+      widthType ? 'eg-input--' + widthType : ''
+    ]"
   >
     <input
+      ref="input"
       class="eg-input__inner"
       :value="value"
       v-bind="$attrs"
@@ -12,21 +20,26 @@
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="placeholder"
+      :autocomplete="autocomplete"
       @input="handleInput"
       @blur="handleBlur"
       @focus="handleFocus"
     >
     <div
-      v-if="$slots.suffix || suffixText"
+      v-if="$slots.suffix || suffixText || isShowClear"
       class="eg-input__suffix"
     >
-      <slot name="suffix"></slot>
-      {{suffixText}}
+      <img v-if="mouseIn" :src="Icons.clear">
+      <template v-else>
+        <slot name="suffix"></slot>
+        {{suffixText}}
+      </template>
     </div>
   </div>
 </template>
 
 <script>
+  import Icon from '@/assets/icon'
   export default {
     name: 'EgInput',
     inheritAttrs: false,
@@ -39,6 +52,10 @@
       disabled: Boolean,
       readonly: Boolean,
       placeholder: String,
+      autocomplete: {
+        type: String,
+        default: 'off'
+      },
       suffixText: String,
       isInteger: {
         type: Boolean,
@@ -52,6 +69,7 @@
         type: Boolean,
         default: false
       },
+      // 建议改成size - ssh 7/13
       widthType: {
         // Input宽度选项:medium,long
         type: String,
@@ -60,10 +78,24 @@
       isError: {
         type: Boolean,
         default: false
+      },
+      clearable: {
+        type: Boolean,
+        default: true
       }
     },
     data () {
       return {
+        isShowError: false,
+        mouseIn: true,
+        Icons: {
+          clear: Icon.input_clear
+        }
+      }
+    },
+    computed: {
+      isShowClear () {
+        return this.mouseIn && this.clearable
       }
     },
     methods: {
@@ -83,6 +115,11 @@
       },
       handleFocus (event) {
         this.$emit('focus', event)
+      },
+      handleClear (event) {
+        this.$refs.input.focus()
+        this.$emit('input', '')
+        this.$emit('clear', event)
       },
       inputValidate (event) {
         let value = event.target.value
@@ -123,6 +160,8 @@
         event.target.value = value
         return value
       }
+    },
+    created () {
     }
   }
 </script>

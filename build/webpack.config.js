@@ -17,8 +17,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(process.cwd(), './src'),
-      'common': path.resolve(process.cwd(), './src/common')
+      '@': path.resolve(process.cwd(), './src')
     }
   },
   module: {
@@ -37,10 +36,7 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader',
           {
-            loader: 'sass-loader',
-            options: {
-              prependData: '@import "common/var.scss";'
-            }
+            loader: 'sass-loader'
           }
         ]
       },

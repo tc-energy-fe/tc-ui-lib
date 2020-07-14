@@ -14,7 +14,7 @@ $font-color-placeholder: #c6c6c6;
 $font-color-reverse: #ffffff;
 
 /*Color*/
-$primary-color: #3d7dff;
+$primary-color: #3d7dff !default;
 $primary-color-2: rgba(61, 125, 255, 0.6);
 $primary-color-3: rgba(61, 125, 255, 0.4);
 $primary-color-light-1: mix(white, $primary-color, 10%);

@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    app: ['./src/eg-ui.js', './packages/theme/index.js']
+    app: ['./src/eg-ui.js']
   },
   output: {
     path: path.resolve(process.cwd(), './lib'),
@@ -21,8 +21,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     modules: ['node_modules'],
     alias: {
-      '@': path.resolve(process.cwd(), './src'),
-      'common': path.resolve(process.cwd(), './packages/theme/common')
+      '@': path.resolve(process.cwd(), './src')
     }
   },
   optimization: {
@@ -31,7 +30,7 @@ module.exports = {
         terserOptions: {
           exclude: /node_modules/,
           output: {
-            comments: false
+            comments: /@license/i
           }
         }
       })
@@ -53,10 +52,7 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader',
           {
-            loader: 'sass-loader',
-            options: {
-              prependData: '@import "common/var.scss";'
-            }
+            loader: 'sass-loader'
           }
         ]
       },

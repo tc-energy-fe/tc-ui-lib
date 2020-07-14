@@ -7,7 +7,6 @@
       placeholder="输入XXX"
       width-type="medium"
       is-number
-      is-error
     >
       <template v-slot:suffix>
         <i class="iconfont icon-tab_icon_fold" />

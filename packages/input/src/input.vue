@@ -10,6 +10,8 @@
       },
       widthType ? 'eg-input--' + widthType : ''
     ]"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
   >
     <input
       ref="input"
@@ -29,7 +31,12 @@
       v-if="$slots.suffix || suffixText || isShowClear"
       class="eg-input__suffix"
     >
-      <img v-if="mouseIn" :src="Icons.clear">
+      <img
+        class="eg-input__clear"
+        v-if="mouseIn"
+        :src="Icons.clear"
+        @click="handleClear"
+      >
       <template v-else>
         <slot name="suffix"></slot>
         {{suffixText}}
@@ -87,7 +94,7 @@
     data () {
       return {
         isShowError: false,
-        mouseIn: true,
+        mouseIn: false,
         Icons: {
           clear: Icon.input_clear
         }
@@ -108,6 +115,10 @@
         }
       },
       handleBlur (event) {
+        let value = event.target.value
+
+        this.isShowError = (value === undefined || value === null || value === '' || this.isError)
+
         if (this.isNumber || this.isInteger) {
           this.$emit('input', this.blurValidate(event))
         }
@@ -120,6 +131,12 @@
         this.$refs.input.focus()
         this.$emit('input', '')
         this.$emit('clear', event)
+      },
+      handleMouseEnter (event) {
+        this.mouseIn = true
+      },
+      handleMouseLeave (event) {
+        this.mouseIn = false
       },
       inputValidate (event) {
         let value = event.target.value

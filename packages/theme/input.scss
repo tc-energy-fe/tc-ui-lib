@@ -1,109 +1,116 @@
+@import "./common/var";
 
 .eg-input {
-    position: relative;
-    display: inline-block;
-    font-size: $base-font-size;
-    $input-height: 2.5rem;
-    width: 11.25rem;
+  position: relative;
+  display: inline-block;
+  font-size: $base-font-size;
+  $input-height: 2.5rem;
+  width: 11.25rem;
+  background-color: $base-background-color;
+  &--medium {
+    width: 13.75rem;
+  }
+  &--long {
+    width: 25rem;
+  }
+  &__inner {
+    width: 100%;
+    height: $input-height;
+    line-height: $input-height;
+    padding: 0 12px;
     background-color: $base-background-color;
-    &--medium {
-        width: 13.75rem;
+    box-sizing: border-box;
+    border: 1px solid $base-border-color;
+    border-radius: $base-border-radius;
+    font-size: inherit;
+    color: $font-color-major;
+    -webkit-appearance: none;
+    outline: none;
+    transition: $all-transition;
+    &:hover {
+      border-color: $primary-color;
     }
-    &--long {
-        width: 25rem;
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
     }
-    &__inner {
-        width: 100%;
-        height: $input-height;
-        line-height: $input-height;
-        padding: 0 12px;
-        background-color: $base-background-color;
-        box-sizing: border-box;
-        border: 1px solid $base-border-color;
-        border-radius: $base-border-radius;
-        font-size: inherit;
-        color: $font-color-major;
-        -webkit-appearance: none;
-        outline: none;
-        transition: $all-transition;
-        &:hover {
-            border-color: $primary-color;
-        }
-        &:focus {
-            outline: none;
-            border-color: $primary-color;
-        }
-        &::placeholder {
-            font-size: 1rem;
-            color: $font-color-minor;
-        }
+    &::placeholder {
+      font-size: 1rem;
+      color: $font-color-minor;
     }
-    &__suffix {
-        display: table-cell;
-        position: relative;
-        height: 100%;
-        width: 1px;
-        padding: 0 5px 0 0;
-        color: $font-color-major;
-        background-color: inherit;
-        vertical-align: middle;
-        white-space: nowrap;
-        border: 1px solid $base-border-color;
-        border-radius: $base-border-radius;
-        transition: $all-transition;
-    }
+  }
+  &__suffix {
+    display: table-cell;
+    position: relative;
+    height: 100%;
+    width: 1px;
+    padding: 0 5px 0 0;
+    color: $font-color-major;
+    background-color: inherit;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: 1px solid $base-border-color;
+    border-radius: $base-border-radius;
+    transition: $all-transition;
+  }
 }
 
 .eg-input-group {
-    display: inline-table;
-    border-collapse: separate;
-    border-spacing: 0;
+  display: inline-table;
+  border-collapse: separate;
+  border-spacing: 0;
+  > .eg-input__inner {
+    display: table-cell;
+    vertical-align: middle;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  > .eg-input__suffix {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    outline: none;
+  }
+  &:hover {
     > .eg-input__inner {
-        display: table-cell;
-        vertical-align: middle;
-        border-right: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+      border-color: $primary-color;
     }
     > .eg-input__suffix {
-        border-left: 0;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        outline: none;
+      border-color: $primary-color;
     }
-    &:hover {
-        > .eg-input__inner {
-            border-color: $primary-color;
-        }
-        > .eg-input__suffix {
-            border-color: $primary-color;
-        }
+  }
+  &:focus-within {
+    > .eg-input__inner {
+      outline: none;
+      border-color: $primary-color;
     }
-    &:focus-within {
-        > .eg-input__inner {
-            outline: none;
-            border-color: $primary-color;
-        }
-        > .eg-input__suffix {
-            border-color: $primary-color;
-        }
+    > .eg-input__suffix {
+      border-color: $primary-color;
     }
+  }
 }
 
 .eg-input--disabled {
+  background-color: $base-background-color-disabled;
+  cursor: not-allowed;
+  > .eg-input__inner {
     background-color: $base-background-color-disabled;
     cursor: not-allowed;
-    > .eg-input__inner {
-        background-color: $base-background-color-disabled;
-        cursor: not-allowed;
-    }
+  }
 }
 
 .eg-input--error {
-    > .eg-input__inner {
-        border-color: #f56c6c;
-    }
-    > .eg-input__suffix {
-        border-color: #f56c6c;
-    }
+  > .eg-input__inner {
+    border-color: #f56c6c;
+  }
+  > .eg-input__suffix {
+    border-color: #f56c6c;
+  }
+}
+
+.eg-input__clear {
+  width: .7rem;
+  height: .7rem;
+  cursor: pointer;
 }

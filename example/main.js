@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-import EgUi from '../src/index'
+import EgUi from '../lib/index'
+
+import('../lib/index').then((module) => {
+  console.log(module)
+})
+
+import "../lib/style.css"
 
 Vue.use(EgUi)
 

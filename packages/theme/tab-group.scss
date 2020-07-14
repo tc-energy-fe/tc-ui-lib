@@ -1,0 +1,10 @@
+
+.eg-tab-group{
+  font-size: 0;
+
+  &:not([type=underline]) {
+    .eg-tab-button:not(:last-of-type) {
+      margin-right: 1rem;
+    }
+  }
+}

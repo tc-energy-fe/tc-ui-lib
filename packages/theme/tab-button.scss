@@ -1,0 +1,49 @@
+.eg-tab-button{
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 2.5rem;
+  color: $font-color-major;
+  background-color: #f2f5fa;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1rem;
+
+  &:hover{
+    background-color: #e6e9ef;
+  }
+
+  &.is-checked{
+    border: none;
+    background-color: $primary-color;
+    color: $font-color-reverse;
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+  }
+
+  &--long {
+    width: 12.5rem;
+  }
+
+  &--short {
+    width: 7.5rem;
+  }
+
+  &[type=underline] {
+    width: auto;
+    padding: 0 1rem;
+    background-color: #FFF;
+    border-radius: 0;
+    border-bottom: 1px solid #d7d7d7;
+
+    &.is-checked{
+      border-color: $primary-color;
+      background-color: #FFF;
+      color: $primary-color;
+    }
+  }
+}

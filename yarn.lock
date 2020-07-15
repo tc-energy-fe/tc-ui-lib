@@ -5872,10 +5872,10 @@ tar@^6.0.2:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-tc-ui-lib@^0.2.0:
-  version "0.2.9"
-  resolved "https://registry.npm.taobao.org/tc-ui-lib/download/tc-ui-lib-0.2.9.tgz#c94c9185b7db3702fee66a87e9c5b40c7464bc17"
-  integrity sha1-yUyRhbfbNwL+5mqH6cW0DHRkvBc=
+tc-ui-lib@^0.4.6:
+  version "0.4.7"
+  resolved "https://registry.npmjs.org/tc-ui-lib/-/tc-ui-lib-0.4.7.tgz#c4d8732403b8f3cff79f4b040302bb804939f0ff"
+  integrity sha512-SQ+YWjZTU6f6XNlh8RXlrC9LmQTeEe1+Qx7m+exoQuy09OZbwH/N+pbD6zhPH+B+RyZvG+W/V9cia/s0d+UUYw==
   dependencies:
     "@babel/polyfill" "^7.7.0"
 

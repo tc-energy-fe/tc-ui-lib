@@ -4,7 +4,6 @@
   position: relative;
   display: inline-block;
   font-size: $base-font-size;
-  $input-height: 2.5rem;
   width: 11.25rem;
   background-color: $base-background-color;
   &--medium {
@@ -15,8 +14,8 @@
   }
   &__inner {
     width: 100%;
-    height: $input-height;
-    line-height: $input-height;
+    height: $form-height;
+    line-height: $form-height;
     padding: 0 12px;
     background-color: $base-background-color;
     box-sizing: border-box;
@@ -101,16 +100,19 @@
 }
 
 .eg-input--error {
+
+
   > .eg-input__inner {
-    border-color: #f56c6c;
+    border-color: $error-color;
   }
   > .eg-input__suffix {
-    border-color: #f56c6c;
+    border-color: $error-color;
   }
 }
 
 .eg-input__clear {
-  width: .7rem;
-  height: .7rem;
+  width: .6rem;
+  height: .6rem;
   cursor: pointer;
+  padding: 0 .4rem;
 }

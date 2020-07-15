@@ -1,18 +1,32 @@
 <template>
   <div id="app">
     <h2>基础组件</h2>
-    <h4>Input</h4>
-    <eg-input
-      v-model="inputText"
-      placeholder="输入XXX"
-      width-type="medium"
-      is-number
-    >
-      <template v-slot:suffix>
-        <i class="iconfont icon-tab_icon_fold" />
-      </template>
-    </eg-input>
-    <h4>Box</h4>
+    <h4 id="input-title">Input</h4>
+    <div class="form">
+      <div class="form-item">
+        <label class="form-item__label">normal</label>
+        <eg-input
+          v-model="inputText"
+          placeholder="输入XXX"
+          is-number
+          :clearable="false"
+          :is-error="false"
+        >
+          <template v-slot:suffix>后缀</template>
+        </eg-input>
+      </div>
+      <div class="form-item">
+        <label class="form-item__label">validate</label>
+        <eg-input v-model="inputText" placeholder="输入YYY"></eg-input>
+      </div>
+      <div class="form-item">
+        <label class="form-item__label">size</label>
+        <eg-input :placeholder="'normal'"></eg-input>
+        <eg-input :placeholder="'medium'" size="medium"></eg-input>
+        <eg-input :placeholder="'long'" size="long"></eg-input>
+      </div>
+    </div>
+    <h4 id="box-title">Box (Nodata)</h4>
     <eg-box
       style="height: 10rem;"
       :extra-text="'title2'"
@@ -21,53 +35,53 @@
         <div>title1</div>
       </template>
       <template v-slot:content>
-        <div style="height: 20rem;">content</div>
+        <div style="height: 100%;" v-nodata="true" eg-nodata-text="木有数据"></div>
       </template>
     </eg-box>
-    <h4>Button</h4>
-    <eg-button>button</eg-button>
-    <eg-button
-      type="text"
-      color="danger"
-    >
-      文字按钮
-    </eg-button>
-    <eg-button
-      type="text"
-      color="success"
-    >
-      文字按钮
-    </eg-button>
-    <i class="iconfont icon-tab_icon_fold" />
-    <i class="iconfont icon-notice_icon_close" />
-    <i class="iconfont icon-nav_icon_setting_n" />
-    <i class="iconfont icon-nav_icon_report_n" />
-    <i class="iconfont icon-nav_icon_overview_n" />
-    <h4>Checkbox Button</h4>
-    <eg-checkbox-group v-model="checked">
-      <eg-checkbox-button text="checkbox1" :label="1" size="long"></eg-checkbox-button>
-      <eg-checkbox-button text="checkbox2" :label="2"></eg-checkbox-button>
-      <eg-checkbox-button text="box3" :label="3" size="short"></eg-checkbox-button>
-    </eg-checkbox-group>
-    <h4>Tab</h4>
-    <div style="background: white;padding: 1rem;text-align: center;">
-      <eg-tab-group v-model="tabValue">
-        <eg-tab-button text="tab1" :label="1" size="long"></eg-tab-button>
-        <eg-tab-button text="tab2" :label="2" :disabled="true"></eg-tab-button>
-        <eg-tab-button text="tab3" :label="3" size="short"></eg-tab-button>
-      </eg-tab-group>
+    <h4 id="button-title">Button</h4>
+    <div class="form">
+      <div class="form-item">
+        <eg-button>normal</eg-button>
+        <eg-button type="minor">minor</eg-button>
+        <eg-button disabled>disabled</eg-button>
+      </div>
+      <div class="form-item">
+        <label class="form-item__label">text</label>
+        <eg-button type="text">normal</eg-button>
+        <eg-button type="text" color="danger">danger</eg-button>
+        <eg-button type="text" color="success">success</eg-button>
+      </div>
     </div>
-    <div style="background: white;padding: 1rem;text-align: center;">
-      <eg-tab-group type="underline" v-model="tabValue">
-        <eg-tab-button text="日" :label="1" size="long"></eg-tab-button>
-        <eg-tab-button text="月" :label="2" :disabled="true"></eg-tab-button>
-        <eg-tab-button text="年" :label="3" size="short"></eg-tab-button>
-      </eg-tab-group>
+<!--    <i class="iconfont icon-tab_icon_fold" />-->
+    <h4 id="checkbox-title">Checkbox Button</h4>
+    <div class="form">
+      <div class="form-item">
+        <label class="form-item__label">size</label>
+        <eg-checkbox-group v-model="checked">
+          <eg-checkbox-button text="long" :label="1" size="long"></eg-checkbox-button>
+          <eg-checkbox-button text="normal" :label="2"></eg-checkbox-button>
+          <eg-checkbox-button text="short" :label="3" size="short"></eg-checkbox-button>
+        </eg-checkbox-group>
+      </div>
     </div>
-    <h4>NoData Mask</h4>
-    <eg-button @click="toggleNodata">切换Nodata</eg-button>
-    <div style="background: white;margin-top: 1rem;">
-      <p v-nodata="isShowNoData" eg-nodata-text="木有数据">aaa</p>
+    <h4 id="tab-title">Radio</h4>
+    <div class="form">
+      <div class="form-item">
+        <label class="form-item__label">tab</label>
+        <eg-tab-group v-model="tabValue">
+          <eg-tab-button text="tab1" :label="1" size="long"></eg-tab-button>
+          <eg-tab-button text="tab2" :label="2" :disabled="true"></eg-tab-button>
+          <eg-tab-button text="tab3" :label="3" size="short"></eg-tab-button>
+        </eg-tab-group>
+      </div>
+      <div class="form-item">
+        <label class="form-item__label">underline</label>
+        <eg-tab-group type="underline" v-model="tabValue">
+          <eg-tab-button text="日" :label="1" size="long"></eg-tab-button>
+          <eg-tab-button text="月" :label="2" :disabled="true"></eg-tab-button>
+          <eg-tab-button text="年" :label="3" size="short"></eg-tab-button>
+        </eg-tab-group>
+      </div>
     </div>
   </div>
 </template>
@@ -93,7 +107,7 @@
 </script>
 
 <style lang="scss">
-  body{
+  body, html{
     padding: 0;
     margin: 0;
   }

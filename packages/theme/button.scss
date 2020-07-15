@@ -4,7 +4,9 @@
   display: inline-block;
   font-size: $base-font-size;
   font-weight: normal;
-  padding: 12px 28px;
+  //padding: 12px 28px;
+  padding: 0 1.6rem;
+  height: $form-height;
   line-height: 1.15;
   outline: none;
   margin: 0;

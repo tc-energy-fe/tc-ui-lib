@@ -1,6 +1,7 @@
 @import "./common/var";
 
 .eg-tab-group{
+  display: inline-block;
   font-size: 0;
 
   &:not([type=underline]) {

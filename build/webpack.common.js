@@ -18,7 +18,7 @@ module.exports = {
     libraryTarget: 'commonjs2'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue'],
     modules: ['node_modules'],
     alias: {
       '@': path.resolve(process.cwd(), './src')
@@ -30,7 +30,7 @@ module.exports = {
         terserOptions: {
           exclude: /node_modules/,
           output: {
-            comments: /@license/i
+            comments: false
           }
         }
       })

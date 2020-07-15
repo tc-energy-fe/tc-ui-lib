@@ -4,11 +4,12 @@
     class="eg-input"
     :class="[
       {
-        'eg-input-group': $slots.suffix || suffixText,
+        'eg-input-group': isGroup,
         'eg-input--disabled': disabled,
         'eg-input--error': isShowError
       },
-      widthType ? 'eg-input--' + widthType : ''
+      widthType ? 'eg-input--' + widthType : '',
+      size ? 'eg-input--' + size : ''
     ]"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
@@ -28,12 +29,12 @@
       @focus="handleFocus"
     >
     <div
-      v-if="$slots.suffix || suffixText || isShowClear"
+      v-if="isGroup"
       class="eg-input__suffix"
     >
       <img
         class="eg-input__clear"
-        v-if="mouseIn"
+        v-if="isShowClear"
         :src="Icons.clear"
         @click="handleClear"
       >
@@ -82,9 +83,14 @@
         type: String,
         default: ''
       },
+      size: {
+        // Input宽度选项:medium,long
+        type: String,
+        default: ''
+      },
       isError: {
         type: Boolean,
-        default: false
+        default: null
       },
       clearable: {
         type: Boolean,
@@ -103,6 +109,9 @@
     computed: {
       isShowClear () {
         return this.mouseIn && this.clearable
+      },
+      isGroup () {
+        return this.$slots.suffix || this.suffixText || this.isShowClear
       }
     },
     methods: {
@@ -117,7 +126,7 @@
       handleBlur (event) {
         let value = event.target.value
 
-        this.isShowError = (value === undefined || value === null || value === '' || this.isError)
+        // this.isShowError = (value === undefined || value === null || value === '') && this.isError !== false
 
         if (this.isNumber || this.isInteger) {
           this.$emit('input', this.blurValidate(event))

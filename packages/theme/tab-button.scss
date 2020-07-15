@@ -8,14 +8,14 @@
   width: 10rem;
   height: 2.5rem;
   color: $font-color-major;
-  background-color: #f2f5fa;
-  border-radius: 1.25rem;
+  background-color: $base-background-color-2;
+  border-radius: $form-height / 2;
   cursor: pointer;
   user-select: none;
   font-size: 1rem;
 
   &:hover{
-    background-color: #e6e9ef;
+    background-color: $button-minor-hover-background-color;
   }
 
   &.is-checked{

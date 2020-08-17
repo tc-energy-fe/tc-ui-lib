@@ -1,0 +1,29 @@
+@import "./common/var";
+
+.eg-box{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  background-color: $base-background-color;
+  .eg-box__header{
+    padding: 1rem;
+    flex-shrink: 0;
+    .eg-box__header--left{
+      float: left;
+    }
+    .eg-box__header--right{
+      float: right;
+    }
+    &::after{
+      display: table;
+      clear: both;
+      content: ''
+    }
+  }
+  .eg-box__content {
+    flex: auto;
+    padding: 0 1rem 1rem;
+    overflow: auto;
+  }
+}

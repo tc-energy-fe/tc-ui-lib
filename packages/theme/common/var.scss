@@ -1,0 +1,42 @@
+
+/*基础公共变量*/
+$base-font-size: 1rem !default;
+$base-background-color: #ffffff !default;
+$base-background-color-2: #f2f5fa !default;
+$base-background-color-disabled: #f5f7fa !default;
+$base-line-color: #f2f5fa !default;
+$base-border-color: #a3a7af !default;
+$base-border-radius: 4px !default;
+
+$font-color-major: #5e5e5e !default;
+$font-color-minor: #a4a4a4 !default;
+$font-color-placeholder: #c6c6c6 !default;
+$font-color-reverse: #ffffff !default;
+
+/*Color*/
+$primary-color: #3d7dff !default;
+$primary-color-2: rgba(61, 125, 255, 0.6) !default;
+$primary-color-3: rgba(61, 125, 255, 0.4) !default;
+$primary-color-light-1: mix(white, $primary-color, 10%) !default;
+
+$functional-color-success: #67c23a !default;
+$functional-color-warning: #e6a23c !default;
+$functional-color-danger: #f56c6c !default;
+$functional-color-disabled: #abacad !default;
+
+$error-color: $functional-color-danger !default;
+
+/*Size*/
+$form-height: 2.5rem !default;
+
+/*Transition*/
+$all-transition: all 200ms;
+
+/*按钮button变量*/
+$button-hover-background-color: mix(white, $primary-color, 25%) !default;
+
+$button-minor-background-color: #e5eeff !default;
+$button-minor-hover-background-color: mix(white, $button-minor-background-color, 25%) !default;
+
+$button-text-disabled-color: $functional-color-disabled !default;
+$button-disabled-background-color: $functional-color-disabled !default;

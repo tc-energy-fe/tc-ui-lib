@@ -1,12 +1,12 @@
 
-import input from './components/input/index'
-import box from './components/box/index'
-import button from './components/button/index'
-import checkboxButton from './components/checkbox-button/index'
-import checkboxGroup from './components/checkbox-group/index'
-import tabGroup from './components/tab-group/index'
-import tabButton from './components/tab-button/index'
-import nodata from './components/nodata/index'
+import input from '../packages/input/index'
+import box from '../packages/box/index'
+import button from '../packages/button/index'
+import checkboxButton from '../packages/checkbox-button/index'
+import checkboxGroup from '../packages/checkbox-group/index'
+import tabGroup from '../packages/tab-group/index'
+import tabButton from '../packages/tab-button/index'
+import nodata from '../packages/nodata/index'
 
 const components = [
   input,

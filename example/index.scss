@@ -1,0 +1,21 @@
+
+//$primary-color: blue;
+
+@import "packages/theme/index";
+
+.form {
+  padding: 1rem;
+  background-color: #FFF;
+}
+
+.form-item {
+  padding: .5rem;
+}
+
+.form-item__label {
+  display: inline-block;
+  min-width: 5rem;
+  height: 100%;
+  vertical-align: middle;
+  padding-right: .5rem;
+}

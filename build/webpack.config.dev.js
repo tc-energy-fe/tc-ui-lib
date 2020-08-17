@@ -16,8 +16,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', 'json'],
     alias: {
-      '@': path.resolve(process.cwd(), './src'),
-      'common': path.resolve(process.cwd(), './src/common')
+      '@': path.resolve(process.cwd(), './src')
     }
   },
   devtool: 'inline-source-map',
@@ -43,10 +42,7 @@ module.exports = {
             loader: 'css-loader'
           },
           {
-            loader: 'sass-loader',
-            options: {
-              prependData: '@import "common/var.scss";'
-            }
+            loader: 'sass-loader'
           }
         ]
       },

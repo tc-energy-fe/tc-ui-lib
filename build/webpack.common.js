@@ -1,6 +1,7 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -9,6 +10,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(process.cwd(), './lib'),
+    publicPath: '/dist/',
     filename: 'index.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
@@ -16,9 +18,23 @@ module.exports = {
     libraryTarget: 'commonjs2'
   },
   resolve: {
+    extensions: ['.js', '.vue'],
+    modules: ['node_modules'],
     alias: {
       '@': path.resolve(process.cwd(), './src')
     }
+  },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          exclude: /node_modules/,
+          output: {
+            comments: false
+          }
+        }
+      })
+    ]
   },
   module: {
     rules: [
@@ -62,5 +78,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'style.css'
     })
-  ],
+  ]
 }

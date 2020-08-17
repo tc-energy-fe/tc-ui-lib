@@ -25,7 +25,8 @@
     color: $font-color-major;
     -webkit-appearance: none;
     outline: none;
-    transition: $all-transition;
+    transition: border-color .3s;
+
     &:hover {
       border-color: $primary-color;
     }

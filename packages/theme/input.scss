@@ -4,10 +4,10 @@
   position: relative;
   display: inline-block;
   font-size: $base-font-size;
-  width: 11.25rem;
+  width: 12rem;
   background-color: $base-background-color;
   &--medium {
-    width: 13.75rem;
+    width: 14rem;
   }
   &--long {
     width: 25rem;
@@ -25,7 +25,8 @@
     color: $font-color-major;
     -webkit-appearance: none;
     outline: none;
-    transition: $all-transition;
+    transition: border-color .3s;
+
     &:hover {
       border-color: $primary-color;
     }

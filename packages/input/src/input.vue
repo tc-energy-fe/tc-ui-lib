@@ -108,7 +108,7 @@
     },
     computed: {
       isShowClear () {
-        return this.mouseIn && this.clearable
+        return this.mouseIn && this.clearable && !this.disabled
       },
       isGroup () {
         return this.$slots.suffix || this.suffixText || this.isShowClear

@@ -51,7 +51,7 @@
     white-space: nowrap;
     border: 1px solid $base-border-color;
     border-radius: $base-border-radius;
-    transition: $all-transition;
+    transition: border-color .3s;
   }
 }
 
@@ -116,4 +116,5 @@
   height: .6rem;
   cursor: pointer;
   padding: 0 .4rem;
+  box-sizing: content-box;
 }

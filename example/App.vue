@@ -6,18 +6,18 @@
       <div class="form-item">
         <label class="form-item__label">normal</label>
         <eg-input
-          v-model="inputText"
+          v-model="inputText1"
           placeholder="输入XXX"
           is-number
           :clearable="false"
           :is-error="false"
         >
-          <template v-slot:suffix>后缀</template>
+<!--          <template v-slot:suffix>后缀</template>-->
         </eg-input>
       </div>
       <div class="form-item">
         <label class="form-item__label">validate</label>
-        <eg-input v-model="inputText" placeholder="输入YYY"></eg-input>
+        <eg-input v-model="inputText2" placeholder="输入YYY" is-number></eg-input>
       </div>
       <div class="form-item">
         <label class="form-item__label">size</label>
@@ -91,7 +91,8 @@
     name: 'App',
     data () {
       return {
-        inputText: null,
+        inputText1: null,
+        inputText2: null,
         checkboxValue: false,
         checked: [1, 2],
         tabValue: 1,

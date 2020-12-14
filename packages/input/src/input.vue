@@ -122,6 +122,7 @@
         } else {
           this.$emit('input', event.target.value)
         }
+        this.$emit('change')
       },
       handleBlur (event) {
         let value = event.target.value

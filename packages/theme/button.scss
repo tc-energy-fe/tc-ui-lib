@@ -45,6 +45,22 @@
   }
 }
 
+.eg-button--danger {
+  color: $functional-color-danger;
+  background-color: $functional-color-danger-light;
+  //&:hover {
+  //  background-color: $button-minor-hover-background-color;
+  //}
+  //&:active {
+  //  background-color: $button-minor-hover-background-color;
+  //}
+  &:disabled {
+    color: $font-color-reverse;
+    background-color: $button-disabled-background-color;
+    cursor: not-allowed;
+  }
+}
+
 .eg-button--text {
   width: auto;
   color: $primary-color;

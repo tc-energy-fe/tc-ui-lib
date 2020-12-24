@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <h2>基础组件</h2>
-    <h4 id="input-title">Input</h4>
+    <h4 id="input-title">
+      Input
+    </h4>
     <div class="form">
       <div class="form-item">
         <label class="form-item__label">normal</label>
@@ -12,21 +14,35 @@
           :clearable="false"
           :is-error="false"
         >
-<!--          <template v-slot:suffix>后缀</template>-->
+          <template v-slot:suffix>
+            后缀
+          </template>
         </eg-input>
       </div>
       <div class="form-item">
         <label class="form-item__label">validate</label>
-        <eg-input v-model="inputText2" placeholder="输入YYY" is-number></eg-input>
+        <eg-input
+          v-model="inputText2"
+          placeholder="输入YYY"
+          is-number
+        />
       </div>
       <div class="form-item">
         <label class="form-item__label">size</label>
-        <eg-input :placeholder="'normal'"></eg-input>
-        <eg-input :placeholder="'medium'" size="medium"></eg-input>
-        <eg-input :placeholder="'long'" size="long"></eg-input>
+        <eg-input :placeholder="'normal'" />
+        <eg-input
+          :placeholder="'medium'"
+          size="medium"
+        />
+        <eg-input
+          :placeholder="'long'"
+          size="long"
+        />
       </div>
     </div>
-    <h4 id="box-title">Box (Nodata)</h4>
+    <h4 id="box-title">
+      Box (Nodata)
+    </h4>
     <eg-box
       style="height: 10rem;"
       :extra-text="'title2'"
@@ -35,51 +51,121 @@
         <div>title1</div>
       </template>
       <template v-slot:content>
-        <div style="height: 100%;" v-nodata="true" eg-nodata-text="木有数据"></div>
+        <div
+          v-nodata="true"
+          style="height: 100%;"
+          eg-nodata-text="木有数据"
+        />
       </template>
     </eg-box>
-    <h4 id="button-title">Button</h4>
+    <h4 id="button-title">
+      Button
+    </h4>
     <div class="form">
       <div class="form-item">
         <eg-button>normal</eg-button>
-        <eg-button type="minor">minor</eg-button>
-        <eg-button disabled>disabled</eg-button>
+        <eg-button type="minor">
+          minor
+        </eg-button>
+        <eg-button disabled>
+          disabled
+        </eg-button>
+        <eg-button
+          type="minor"
+          disabled
+        >
+          minor-disabled
+        </eg-button>
       </div>
       <div class="form-item">
         <label class="form-item__label">text</label>
-        <eg-button type="text">normal</eg-button>
-        <eg-button type="text" color="danger">danger</eg-button>
-        <eg-button type="text" color="success">success</eg-button>
+        <eg-button type="text">
+          normal
+        </eg-button>
+        <eg-button
+          type="text"
+          color="danger"
+        >
+          danger
+        </eg-button>
+        <eg-button
+          type="text"
+          color="success"
+        >
+          success
+        </eg-button>
       </div>
     </div>
-<!--    <i class="iconfont icon-tab_icon_fold" />-->
-    <h4 id="checkbox-title">Checkbox Button</h4>
+    <!--    <i class="iconfont icon-tab_icon_fold" />-->
+    <h4 id="checkbox-title">
+      Checkbox Button
+    </h4>
     <div class="form">
       <div class="form-item">
         <label class="form-item__label">size</label>
         <eg-checkbox-group v-model="checked">
-          <eg-checkbox-button text="long" :label="1" size="long"></eg-checkbox-button>
-          <eg-checkbox-button text="normal" :label="2"></eg-checkbox-button>
-          <eg-checkbox-button text="short" :label="3" size="short"></eg-checkbox-button>
+          <eg-checkbox-button
+            text="long"
+            :label="1"
+            size="long"
+          />
+          <eg-checkbox-button
+            text="normal"
+            :label="2"
+          />
+          <eg-checkbox-button
+            text="short"
+            :label="3"
+            size="short"
+          />
         </eg-checkbox-group>
       </div>
     </div>
-    <h4 id="tab-title">Radio</h4>
+    <h4 id="tab-title">
+      Radio
+    </h4>
     <div class="form">
       <div class="form-item">
         <label class="form-item__label">tab</label>
         <eg-tab-group v-model="tabValue">
-          <eg-tab-button text="tab1" :label="1" size="long"></eg-tab-button>
-          <eg-tab-button text="tab2" :label="2" :disabled="true"></eg-tab-button>
-          <eg-tab-button text="tab3" :label="3" size="short"></eg-tab-button>
+          <eg-tab-button
+            text="tab1"
+            :label="1"
+            size="long"
+          />
+          <eg-tab-button
+            text="tab2"
+            :label="2"
+            :disabled="true"
+          />
+          <eg-tab-button
+            text="tab3"
+            :label="3"
+            size="short"
+          />
         </eg-tab-group>
       </div>
       <div class="form-item">
         <label class="form-item__label">underline</label>
-        <eg-tab-group type="underline" v-model="tabValue">
-          <eg-tab-button text="日" :label="1" size="long"></eg-tab-button>
-          <eg-tab-button text="月" :label="2" :disabled="true"></eg-tab-button>
-          <eg-tab-button text="年" :label="3" size="short"></eg-tab-button>
+        <eg-tab-group
+          v-model="tabValue"
+          type="underline"
+        >
+          <eg-tab-button
+            text="日"
+            :label="1"
+            size="long"
+          />
+          <eg-tab-button
+            text="月"
+            :label="2"
+            :disabled="true"
+          />
+          <eg-tab-button
+            text="年"
+            :label="3"
+            size="short"
+          />
         </eg-tab-group>
       </div>
     </div>

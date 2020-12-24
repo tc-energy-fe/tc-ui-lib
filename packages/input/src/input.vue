@@ -157,7 +157,7 @@
         }
         if (value !== '') {
           if (this.isNumber && !this.isInteger) {
-            const numberRegExp = this.isNegative ? /^-?(\d+(\.\d*)?)?/ : /^\d+(\.\d*)?/
+            const numberRegExp = this.isNegative ? /^-?(\d+(\.\d*)?)/ : /^\d+(\.\d*)?/
             value = value.match(numberRegExp)
           } else if (this.isInteger) {
             const integerRegExp = this.isNegative ? /^-?\d+/ : /^\d+/

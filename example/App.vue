@@ -9,6 +9,7 @@
           v-model="inputText1"
           placeholder="输入XXX"
           is-number
+          is-negative
           :clearable="false"
           :is-error="false"
         >

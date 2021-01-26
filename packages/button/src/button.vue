@@ -2,6 +2,7 @@
 <template>
   <button
     class="eg-button"
+    :type="nativeType"
     :class="[
       type ? 'eg-button--' + type : ''
     ]"
@@ -19,7 +20,10 @@
       type: {
         type: String
       },
-      disabled: Boolean
+      disabled: Boolean,
+      nativeType: {
+        default: 'button'
+      }
     },
     methods: {
       handleClick (event) {

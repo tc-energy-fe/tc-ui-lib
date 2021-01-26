@@ -6,8 +6,8 @@
   align-items: center;
   justify-content: center;
   width: 10rem;
-  height: 2.5rem;
-  color: $font-color-major;
+  height: $form-height;
+  color: $font-color;
   background-color: $base-background-color-2;
   border-radius: $form-height / 2;
   cursor: pointer;

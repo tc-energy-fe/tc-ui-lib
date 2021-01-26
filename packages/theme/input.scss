@@ -22,7 +22,7 @@
     border: 1px solid $base-border-color;
     border-radius: $base-border-radius;
     font-size: inherit;
-    color: $font-color-major;
+    color: $font-color;
     -webkit-appearance: none;
     outline: none;
     transition: border-color .3s;
@@ -45,7 +45,7 @@
     height: 100%;
     width: 1px;
     padding: 0 5px 0 0;
-    color: $font-color-major;
+    color: $font-color;
     background-color: inherit;
     vertical-align: middle;
     white-space: nowrap;

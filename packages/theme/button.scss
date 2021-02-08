@@ -48,12 +48,28 @@
 .eg-button--danger {
   color: $functional-color-danger;
   background-color: $functional-color-danger-light;
-  //&:hover {
-  //  background-color: $button-minor-hover-background-color;
-  //}
-  //&:active {
-  //  background-color: $button-minor-hover-background-color;
-  //}
+  &:hover {
+    background-color: $button-danger-hover-background-color;
+  }
+  &:active {
+    background-color: $button-danger-hover-background-color;
+  }
+  &:disabled {
+    color: $font-color-reverse;
+    background-color: $button-disabled-background-color;
+    cursor: not-allowed;
+  }
+}
+
+.eg-button--success {
+  color: $functional-color-success;
+  background-color: $functional-color-success-light;
+  &:hover {
+    background-color: $button-success-hover-background-color;
+  }
+  &:active {
+    background-color: $button-success-hover-background-color;
+  }
   &:disabled {
     color: $font-color-reverse;
     background-color: $button-disabled-background-color;
@@ -63,6 +79,7 @@
 
 .eg-button--text {
   width: auto;
+  height: auto;
   color: $primary-color;
   background-color: transparent;
   text-decoration: underline;

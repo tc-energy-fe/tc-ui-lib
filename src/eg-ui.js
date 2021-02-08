@@ -49,8 +49,8 @@ export const EgTabGroup = tabGroup
 export const EgTabButton = tabButton
 export const EgNodata = nodata
 
-export * as filters from '../src/plugins/filters'
-export utils from '../src/plugins/utils'
+// export * as filters from '../src/plugins/filters'
+// export utils from '../src/plugins/utils'
 
 export default {
   install,

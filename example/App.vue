@@ -190,7 +190,8 @@
       toggleNodata () {
         this.isShowNoData = !this.isShowNoData
       }
-    }
+    },
+    created () {}
   }
 </script>
 

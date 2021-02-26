@@ -8,7 +8,7 @@ import tabGroup from '../packages/tab-group/index'
 import tabButton from '../packages/tab-button/index'
 import nodata from '../packages/nodata/index'
 
-import filters from './plugins/filters'
+import * as filters from './plugins/filters'
 
 import utils from './plugins/utils'
 
@@ -31,13 +31,15 @@ export const install = function (Vue, options = {}) {
   Vue.use(nodata)
 
   // filters
-  filters.forEach(filter => {
-    Vue.filter(filter.name, filter)
-  })
+  for (let filter in filters) {
+    Vue.filter(filter, filters[filter])
+  }
 
   // utils
-  Vue.prototype.$utils = utils
-  window.egUtils = utils
+  for (let util in utils) {
+    Vue.prototype[`$${util}`] = utils[util]
+    window[util] = utils[util]
+  }
 }
 
 export const EgInput = input
@@ -49,8 +51,8 @@ export const EgTabGroup = tabGroup
 export const EgTabButton = tabButton
 export const EgNodata = nodata
 
-// export * as filters from '../src/plugins/filters'
-// export utils from '../src/plugins/utils'
+export const EgUtils = utils
+export const EgFilters = filters
 
 export default {
   install,

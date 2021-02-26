@@ -10,5 +10,3 @@ export function currency (value, decimals) {
 export function miss (value) {
   return value !== undefined && value !== null ? value : '-'
 }
-
-export default [currency, miss]

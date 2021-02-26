@@ -63,5 +63,7 @@ export default {
   checkboxGroup,
   tabGroup,
   tabButton,
-  nodata
+  nodata,
+  utils,
+  filters
 }

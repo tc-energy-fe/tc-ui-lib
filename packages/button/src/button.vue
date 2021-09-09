@@ -9,6 +9,7 @@
     :disabled="disabled"
     @click="handleClick"
   >
+    <i :class="['iconfont',icon]" v-if="icon"></i>
     <slot />
   </button>
 </template>
@@ -17,6 +18,10 @@
   export default {
     name: 'EgButton',
     props: {
+      icon: {
+        type: String,
+        default: ''
+      },
       type: {
         type: String
       },

@@ -64,9 +64,13 @@
     </h4>
     <div class="form">
       <div class="form-item">
+        <eg-button icon="icon-icon-ammeter"></eg-button>
         <eg-button>normal</eg-button>
         <eg-button type="minor">
           minor
+        </eg-button>
+        <eg-button  type="add" icon="icon-nav_icon_warn">
+          添加样式
         </eg-button>
         <eg-button disabled>
           disabled
@@ -201,7 +205,7 @@
     margin: 0;
   }
 
-  @import "//at.alicdn.com/t/font_444910_7bsaew8i1bf.css";
+  @import "//at.alicdn.com/t/font_444910_s12uv8tu1rc.css";
   /*@font-face {*/
   /*  font-family: 'iconfont';  !* project id 444910 *!*/
   /*  src: url('//at.alicdn.com/t/font_444910_ucrq3qghqi.eot');*/

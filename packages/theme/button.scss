@@ -29,7 +29,7 @@
   }
 }
 
-.eg-button--minor {
+.eg-button--minor,.eg-button--add{
   color: $primary-color;
   background-color: $button-minor-background-color;
   &:hover {
@@ -45,6 +45,13 @@
   }
 }
 
+.eg-button--add{
+  border-radius: 2px;
+  padding: 0 1rem;
+  >i {
+    margin-right: 0.5rem;
+  }
+}
 .eg-button--danger {
   color: $functional-color-danger;
   background-color: $functional-color-danger-light;
